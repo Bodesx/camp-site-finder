@@ -1,0 +1,45 @@
+<% layout('layout/boilerplate') %>
+    <div class="row">
+ <h1 class="text-center">New campground</h1>
+ <div class="col-6 offset-3">
+    <form action="/campgrounds" method="POST"novaLidate class="validated-form" enctype="multipart/form-data" >
+        <div class="mb-3">
+            <label class="form-label" for="title">title</label>
+            <input class="form-control" type="text" id="title" name="campground[title]" required>
+        <div class="valid-feedback">Nice place is it</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="location">location</label>
+            <input class="form-control" type="text" id="location" name="campground[location]" required>
+            <div class="valid-feedback">This location G mad oo</div>
+        </div>
+
+<div class="input-group mb-3">
+    <input type="file" class="form-control custom-file"  name="image" id="image"multiple >
+    <label class="input-group-text custom-file-label" for="image">Upload images</label>
+</div>
+<!--div class="mb-3">
+    <label class="form-label" for="image">image url</label>
+    <input class="form-control" type="text" id="image" name="campground[image]" required>
+    <div class="valid-feedback">love it picasso</div>
+</-div-->
+<div class="input-group mb-3">
+    <span class="input-group-text" id="price-label">$</span>
+    <input type="text" class="form-control" id="price" placeholder="amount" name="campground[price]" aria-label="Amount (to the nearest dollar)" required>
+    <span class="input-group-text">.00</span>
+        <div class="valid-feedback">Pay my G </div>
+</div>
+
+<div class="mb-3">
+    <label class="form-label" for="description">Description</label>
+    <textarea class="form-control" type="text" id="description" name="campground[description]" required></textarea>
+    <div class="valid-feedback">A nice PLace must have a Good</div>
+</div>
+
+        <button class="btn btn-success">Add campground</button>   
+    <div class="mb-3">
+    </form>
+    <a href="/campgrounds">back to campground</a> 
+    </div>
+ </div>
+    </div>

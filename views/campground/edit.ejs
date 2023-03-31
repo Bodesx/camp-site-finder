@@ -1,0 +1,49 @@
+<% layout('layout/boilerplate') %>
+   
+    <div class="row">
+        <h1 class="text-center">Edit campground</h1>
+        <div class="col-6 offset-3">
+            <form action="/campgrounds/<%= campground.id %>?_method=PUT " method="POST"novaLidate class="validated-form" enctype="multipart/form-data" >
+                <div class="mb-3">
+                    <label class="form-label" for="title">title</label>
+                    <input class="form-control" type="text" id="title" name="campground[title]"value="<%= campground.title %>"required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">location</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]" value="<%=campground.location %>" required>
+                </div>
+            <div class="input-group mb-3">
+                <input type="file" class="form-control custom-file" name="image" id="image" multiple>
+                <label class="input-group-text custom-file-label" for="image">Upload More images</label>
+            </div>
+            <div class="mb-3">
+                <% campground.images.forEach(function(image,i){ %>
+                    <img src="<%= image.thumbnail %>" class="img-thumbnail" alt="">
+                    <div class="form-check-inline">
+                        <input type="checkbox" id="image-<%= i %>" name="deleteImages[]" value="<%= image.filename %>">
+                    </div>
+                    <label for="image-<%= i %>">Delete image</label>
+
+                    <% }) %>
+            </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" id="price" placeholder="amount" name="campground[price]" value="<%=campground.price %>"
+                        aria-label="Amount (to the nearest dollar)"required>
+                    <span class="input-group-text">.00</span>
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="campground[description]"><%= campground.description %></textarea> 
+
+                <button class="btn btn-info">Update campground</button>
+                <div class="mb-3">
+            </form>
+           <div>
+            <button class="btn btn-warning" href="/campgrounds/<%=campground._id %>">Back to campgrounds</button> 
+            </div>
+        </div>
+    </div>
+    </div>

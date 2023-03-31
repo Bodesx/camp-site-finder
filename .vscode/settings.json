@@ -1,0 +1,23 @@
+{
+    "livePreview.defaultPreviewPath": "/views/campground/show.ejs",
+    "cSpell.words": [
+        "resave",
+        "Uninitailized"
+    ],
+    "git.ignoreLimitWarning": true,
+    "cSpell.ignoreWords": [
+        "-JSON",
+        "cloudinary",
+        "mapbox",
+        "mapboxgl",
+        "virtuals"
+    ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:camp}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    }
+}

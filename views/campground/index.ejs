@@ -1,0 +1,60 @@
+<% layout('layout/boilerplate') %> 
+<link rel="stylesheet" href="/stylesheet/index.css">
+
+    <div id="map"></div>
+    
+    
+<style>
+    #map {
+        height: 450px;
+        top: 0%;
+        bottom: 0%;
+        width: 100%;
+
+    }
+</style>
+
+
+
+
+
+   <h1>All Campgrounds</h1> 
+    <div>
+        <a href="campgrounds/new">add campground</a>
+    </div>
+   <% for(let campground of campgrounds) {%>
+<div class="card mb-5">
+    <div class="row">
+        <div class="col-md-4">
+    <%if(campground.images.length) {%>
+        <img class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+        <% }else {%>
+            <img class="img-fluid" alt=""
+                src=https://res.cloudinary.com/dredw0sx5/image/upload/v1677061762/Camp/uafn6ehtdjmb4dc5ewwj.jpg>
+            <% } %>
+                </div>
+        <div class="col-mg-8">
+            <div class="card-body">
+                <h5 class="card-title"> <%= campground.title %> </h5>
+                <p class="card-text"> <%= campground.description %> </p>
+                <p class="card-text"> <small class="text-muted"> <%= campground.location %> </small></p>
+                <a class="btn btn-primary" href="/campgrounds/<%= campground._id %> ">view <%= campground.title %> </a>
+            </div>
+        </div>
+    </div>
+</div>
+   
+                       
+   <% } %> 
+
+<script>
+    const campgrounds = { features: <%- JSON.stringify(campgrounds) %>}
+</script>
+<script type="text/javascript" src="/javascript/homeMap.js"></script>
+
+
+
+
+
+
+    
