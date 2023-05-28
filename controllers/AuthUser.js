@@ -1,4 +1,4 @@
-const User=require('../models/user')
+const User = require('../models/user')
 
 
 
@@ -6,10 +6,10 @@ module.exports.userRegister=(req,res)=>{
     res.render('users/register')
 }
 
-module.exports.userRegistered=async(req,res)=>{
+module.exports.register=async(req,res)=>{
  try{
     const {email,username,password}=req.body
-    const user =new User({email, username})
+    const user = new User({email, username})
     const registeredUser= await User.register(user, password)
    req.login(registeredUser,err=>{
     if(err)return next(err)
@@ -17,7 +17,7 @@ module.exports.userRegistered=async(req,res)=>{
    res.redirect('/campgrounds')
    })
    
-} catch(e){
+} catch (e){
     req.flash('error', e.message)
     res.redirect('register')
     }
@@ -29,7 +29,7 @@ module.exports.userLogin=(req,res)=>{
 }
 
 
-module.exports.userAuth=  (req,res)=>{
+module.exports.userAuth =  (req,res)=>{
     req.flash('success','welcome back')
     const redirectUrl=req.session.returnTo || '/campgrounds'
     delete req.session.returnTo

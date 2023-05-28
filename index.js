@@ -20,7 +20,7 @@ const userRoute=require('./routes/AuthUser')
 const { Cookie } = require('express-session');
 const passport = require('passport');
 const localPass=require('passport-local')
-const user=require('./models/user');
+const User=require('./models/user');
 const mongoSanitize = require('express-mongo-sanitize');
 
 
@@ -65,11 +65,11 @@ app.use(session(sessionConfig))
 //use passport b4 session
 app.use(passport.initialize())
 app.use(passport.session())
-passport.use(new localPass(user.authenticate()))
+passport.use(new localPass(User.authenticate()))
 
 //store user and delete 
-passport.serializeUser(user.serializeUser())
-passport.deserializeUser(user.deserializeUser())
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
 
 
 

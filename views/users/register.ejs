@@ -13,19 +13,19 @@
 <link rel="stylesheet" href="/stylesheet/style.css">
 
 
-    <title>Forms</title>
+    <title>Register</title>
 <body>
     <form action="/register" method="POST" class="validated-form" novalidate>
         <!-- Left Side of the form-->
         <div class="contact-left">
-            <h1 class="title">Contact Us</h1>
-            <p class="description">Let's stay in touch.</br> For more information, </br> sign up. </p>
+            <h1 class="title">Already Registered..    </h1>
+            <p class="description"><a href="/login">login</a>
         </div>
         <!--Right side of the form-->
         <div class="contact-right">
             <div class="input-container">
-                <div class="placeholder">Username</div>
-                <input type="text" id="username" name="username" autocomplete="off" class="input-name input" required >
+                <div class="placeholder" for="username">Username</div>
+                <input type="text" id="username" name="username" autocomplete="off" class="input-name input" required autofocus>
                 <svg class="line-svg" width="300" height="2" viewBox="0 0 300 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path class="elastic-line" d="M0 0.999512C0 0.999512 60.5 0.999512 150 0.999512C239.5 0.999512 300 0.999512 300 0.999512"
                         stroke="#D1D3DA" stroke-width="3" />
@@ -33,8 +33,8 @@
                 </div>
             
             <div class="input-container">
-                <div class="placeholder">Email</div>
-                <input type="text" id="email" name="email" autocomplete="off" class="input-name input" required >
+                <div class="placeholder" for="email">Email</div>
+                <input type="email" id="email" name="email" autocomplete="off" class="input-name input" required >
                 <svg class="line-svg" width="300" height="2" viewBox="0 0 300 2" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path class="elastic-line"
@@ -43,8 +43,8 @@
                 </svg>
             </div>
             <div class="input-container">
-                <div class="placeholder">Password</div>
-                <input  type="text" name="password" id="password"  autocomplete="off" class="input-name input" required>
+                <div class="placeholder" for="password">Password</div>
+                <input  type="password" name="password" id="password"  autocomplete="off" class="input-name input" required>
                 <svg class="line-svg" width="300" height="2" viewBox="0 0 300 2" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path class="elastic-line"
@@ -68,33 +68,22 @@
                 <path class="elastic-line" d="M2 8.5L6.5 13L17.5 2" stroke="white" stroke-width="4" />
               </svg>
             </div>
-            <label class="checkbox-label">Send me promotions and offers.</label>
+            <label class="checkbox-label">rules and regulations.</label>
         </div>
-        <button>Submit</button>
+        <button class="btn btn-success btn-block">Register</button>
         <a href="campgrounds/home">Back to camp</a>
       </div>
     
-      <svg
-  id="character"
-  width="241"
-  height="336"
-  viewBox="0 0 241 336"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-
-
-</svg>
+  
 
     <div class="submitted">
-        <p>Thanks for submitting. </br> You'll hear from us soon 👏</p>
+        <p>Thanks for registering.👏</p>
     </div>
     </form>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
-      integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
-      crossorigin="anonymous"
+      integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
     <script src="/javascript/form.js"></script>
